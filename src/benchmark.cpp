@@ -78,6 +78,13 @@ void Benchmark::startTest(int blockSize, int queueDepth, int threads, const TQSt
             flushProc.addArgument("sync; echo 3 > /proc/sys/vm/drop_caches");
             flushProc.start();
             while(flushProc.isRunning() && m_running) tqApp->processEvents();
+
+            // Allow tdesud daemon to stabilize its credential cache socket
+            TQTime t;
+            t.start();
+            while (t.elapsed() < 500 && m_running) {
+                tqApp->processEvents(100);
+            }
         }
 
         if (!isRunning()) return;
@@ -97,17 +104,7 @@ void Benchmark::startTest(int blockSize, int queueDepth, int threads, const TQSt
         
         args << "--runtime=" + TQString::number(settings.getMeasuringTime());
 
-        {
-            TQProcess cacheProc;
-            cacheProc.addArgument("tdesu");
-            cacheProc.addArgument("-d");
-            cacheProc.addArgument("-c");
-            cacheProc.addArgument("sync; echo 3 > /proc/sys/vm/drop_caches");
-            cacheProc.start();
-            while (cacheProc.isRunning()) {
-                tqApp->processEvents();
-            }
-        }
+
 
         TQProcess proc;
         proc.addArgument("tdesu");
@@ -335,4 +332,11 @@ void Benchmark::prepareFile(const TQString &benchmarkFile, int fileSize)
     proc.start();
     
     while(proc.isRunning() && m_running) tqApp->processEvents();
+
+    // Allow tdesud daemon to stabilize its credential cache socket
+    TQTime t;
+    t.start();
+    while (t.elapsed() < 500 && m_running) {
+        tqApp->processEvents(100);
+    }
 }
