@@ -91,6 +91,14 @@ make -j$(nproc)
 
 This will clean, rebuild, and package everything into `tdediskmark_v1.0.deb`.
 
+### Create a Q4OS (.qsi) Installer
+
+```bash
+./build_qsi.sh
+```
+
+Packages the application into a native standalone Q4OS Installer (`setup_tdediskmark_1.0.qsi`).
+
 ### Cleanup
 
 ```bash
