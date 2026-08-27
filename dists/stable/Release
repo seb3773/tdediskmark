@@ -1,0 +1,24 @@
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Thu, 27 Aug 2026 11:34:36 +0000
+Description: APT Repository for tdeDiskMark (Storage Device Benchmark for Trinity Desktop & Linux)
+Label: tdeDiskMark APT Repository
+Origin: tdediskmark
+Suite: stable
+MD5Sum:
+ a94cf5606e4bad6506055d0dd46ffc91              260 Release
+ d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
+ 3e9638189465d9148765ddba5267cf0e               29 main/binary-amd64/Packages.gz
+SHA1:
+ bee1c9a007a9b0d1ead42e50dd1c46002c9876e7              260 Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
+ a2350295940a327346cea28d1e05dec520984c2c               29 main/binary-amd64/Packages.gz
+SHA256:
+ fb8335dff26f3c21fd7477ad6f0b8be8c9ea4fc0495c9bbbed1484b73114a860              260 Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
+ 851ce27f7d0bccd3ee7b9e63f86850ded17d46349ce073d2b295e31d78fc39e3               29 main/binary-amd64/Packages.gz
+SHA512:
+ 5bd342d84a4cfc6ef7d6d0458e62212e91a6925041d86480b4d821b75d96bf9e8ebb2d0942d4c5aab17c48e29b14df0af3ed79a11101edc0ace1eb1751417b81              260 Release
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
+ 1d394b19d2f4fe0c9d6c3f01179c453465a7244cd605d9e5cfca9508062c199b6b8713d67f0810928055165ddb4ba502da63257ac3f53dd2b1aadc8670609df0               29 main/binary-amd64/Packages.gz
