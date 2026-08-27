@@ -1,24 +1,24 @@
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Thu, 27 Aug 2026 11:35:40 +0000
+Date: Thu, 27 Aug 2026 11:38:07 +0000
 Description: APT Repository for tdeDiskMark (Storage Device Benchmark for Trinity Desktop & Linux)
 Label: tdeDiskMark APT Repository
 Origin: tdediskmark
 Suite: stable
 MD5Sum:
- b12848064ad94bf1f5abcb2b9ad44b49              260 Release
+ eaa5a8d31c21c215f332665078d962f4              260 Release
  fc32963d864ac090a34ec5a2c5f1255f              811 main/binary-amd64/Packages
- 2be67488acd18e31e32332fd9f7891f8              561 main/binary-amd64/Packages.gz
+ 95a616f3d7708b2e66cb1885a9ed7a77              561 main/binary-amd64/Packages.gz
 SHA1:
- 5806fa253bdbef7a3fe04d3dea70e3591d3708fa              260 Release
+ e6913fb5d25da7b187cec9a633078e59abd48ad7              260 Release
  b203f5670e68c61168afdc4266f4fa7537b03636              811 main/binary-amd64/Packages
- 6fabf17c75d5daca747d19a90e31a291da3dc784              561 main/binary-amd64/Packages.gz
+ 2bf877fd406560ff69ea65563c478c62540453b5              561 main/binary-amd64/Packages.gz
 SHA256:
- ab326431deb8c6e3cbddc7f66900fe62d5179940460ab8e6c0ef79c684bf5ba8              260 Release
+ 0f3e7b10c84ad10785a8e00f1c299a27139fc09998a1387cc7c8bd4241a4551d              260 Release
  3416f8f7f87a171e4da3f7eee0f887d55478c38d81250a7ffdf5c41220ce163d              811 main/binary-amd64/Packages
- da69144c0497e9e72ee905249f452d5a67f546dcaae7c963d56200b8bb545ed8              561 main/binary-amd64/Packages.gz
+ 0da46eec9b732910906dfc6204bc843929102ed1f858fdb80091e7e443d6753a              561 main/binary-amd64/Packages.gz
 SHA512:
- f347a27a1e5ea0202bd9c481c4bce7cde50c7475e71f4c0c9cf5630e4d4106754757fda5088cf7d4c94e98dab8b1ec0dce141c1a323fabe442fe34cbac5ae68e              260 Release
+ 13b2aa2761aec1979589fcaa505aff7abea52b11967274253b9ca357685db12260808c53551b43d9a14cc5a0d1528fb566526591c8252d50f22752fbcd8ead0d              260 Release
  757c39edba1cb40512671d79a33871de63be33c426d56e6c9b3590ec00b880baf914d4efeb684d40dc8cca33f7c15eb4253058c795116f625b2b1d6f7e7f124d              811 main/binary-amd64/Packages
- f6040e33d4fe21a5af09dae4ce02798289f03c148662423afe7b820b4d483ccc7ce98688ec747b58edd6b3c59d377f6c64bbb75e3bbff122e773d4262eb136e4              561 main/binary-amd64/Packages.gz
+ 8cc4baf30936be7e488f361d582a9f9c873ce190f7128b3237d81ed83523eb2bcca2fe1cf5e5eec4ad5e5e979b23a8414b676133c3e1b0f2fdda11264bc0fd39              561 main/binary-amd64/Packages.gz
