@@ -1,0 +1,21 @@
+Package: tdediskmark
+Version: 1.0
+Architecture: amd64
+Maintainer: seb3773 <seb3773@github.com>
+Installed-Size: 400
+Depends: fio, libnotify4 | libnotify-bin
+Recommends: tdelibs14-trinity
+Filename: pool/main/t/tdediskmark/tdediskmark_v1.0.deb
+Size: 100368
+MD5sum: dfdd4c6756d79cc394c36e86c0f20006
+SHA1: ee44a2da699290aef94ef50c249ab5335f5064b1
+SHA256: 47d84da0a301cf478cfb7220299b0ed773887888af97c2eb94cb30aa33de37db
+Section: utils
+Priority: optional
+Homepage: https://github.com/seb3773/tdediskmark
+Description: Storage device benchmark tool for Trinity DE
+ tdeDiskMark is a native TDE port of KDiskMark, the popular
+ HDD/SSD benchmark tool. Features analog gauges with anti-aliased
+ rendering, fun themes (Racing, Night Fly), desktop notifications,
+ and multiple performance profiles. Uses fio under the hood.
+
