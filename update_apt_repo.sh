@@ -501,7 +501,7 @@ generate_index_html() {
         <div class="badge badge-purple">x86_64</div>
       </div>
       <h1>tdeDiskMark <span class="version-pill">v__VERSION__</span></h1>
-      <p class="lead">HDD and SSD storage benchmark utility with real-time analog gauges and dynamic themes for Trinity Desktop Environment (TDE) &amp; Linux.</p>
+      <p class="lead">HDD and SSD storage benchmark utility based on KDiskMark with real-time analog gauges and dynamic themes for Trinity Desktop Environment (TDE) &amp; Linux.</p>
     </header>
 
     <!-- Method 1: APT Repository -->
