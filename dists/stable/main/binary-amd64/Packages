@@ -6,10 +6,10 @@ Installed-Size: 400
 Depends: fio, libnotify4 | libnotify-bin
 Recommends: tdelibs14-trinity
 Filename: pool/main/t/tdediskmark/tdediskmark_v1.0.deb
-Size: 100368
-MD5sum: dfdd4c6756d79cc394c36e86c0f20006
-SHA1: ee44a2da699290aef94ef50c249ab5335f5064b1
-SHA256: 47d84da0a301cf478cfb7220299b0ed773887888af97c2eb94cb30aa33de37db
+Size: 101052
+MD5sum: 0bf11826a30b41fb43e983d26d797314
+SHA1: 1b26a6d46ac6d653fe41ffa40e95c2273a99bb2c
+SHA256: a955b68b2655aff7539272cfe6b680041cb4c968ece2d6d5f59d55582497072e
 Section: utils
 Priority: optional
 Homepage: https://github.com/seb3773/tdediskmark
