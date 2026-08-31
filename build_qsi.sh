@@ -72,6 +72,9 @@ rm -f "$DEB_DIR"/*.deb "$OUT_DIR"/*.qsi
 cp -a "$LATEST_DEB" "$DEB_DIR/"
 
 # Ensure hook permissions
+if [ -f "$TEMPLATES_DIR/qch_preaptr.dvt" ]; then
+    chmod +x "$TEMPLATES_DIR/qch_preaptr.dvt"
+fi
 if [ -f "$TEMPLATES_DIR/qch_postsetupr.dvt" ]; then
     chmod +x "$TEMPLATES_DIR/qch_postsetupr.dvt"
 fi

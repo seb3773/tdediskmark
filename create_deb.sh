@@ -55,7 +55,7 @@ for SIZE in 16 22 24 32 48 128 256; do
     ln -sf "../../../../64x64/apps/$PKG_NAME.png" "$TARGET_DIR/$PKG_NAME.png"
 done
 
-# ---- DEBIAN control ----
+# ---- DEBIAN control, postinst, postrm ----
 mkdir -p "$STAGING/DEBIAN"
 
 INSTALLED_SIZE=$(du -sk "$STAGING/usr" | cut -f1)
@@ -78,13 +78,75 @@ Description: Storage device benchmark tool for Trinity DE
  and multiple performance profiles. Uses fio under the hood.
 EOF
 
+# postinst script: Configure APT repository automatically
+cat > "$STAGING/DEBIAN/postinst" << 'EOF'
+#!/bin/sh
+set -e
+
+# Configuration automatique du dépôt APT pour les futures mises à jour
+if [ -d /etc/apt/sources.list.d ]; then
+    cat << 'REPEOF' > /etc/apt/sources.list.d/tdediskmark.list
+# tdeDiskMark APT Repository
+deb [trusted=yes] https://seb3773.github.io/tdediskmark/ stable main
+REPEOF
+fi
+
+# Recharger la base de services et menus Trinity
+if [ -x /opt/trinity/bin/tdebuildsycoca ]; then
+    /opt/trinity/bin/tdebuildsycoca >/dev/null 2>&1 || true
+fi
+
+# Mettre à jour le cache d'icônes
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -f -t /usr/share/icons/hicolor >/dev/null 2>&1 || true
+fi
+
+# Mettre à jour la base de données desktop
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q /usr/share/applications >/dev/null 2>&1 || true
+fi
+
+exit 0
+EOF
+chmod 755 "$STAGING/DEBIAN/postinst"
+
+# postrm script: Clean up APT repository on remove/purge
+cat > "$STAGING/DEBIAN/postrm" << 'EOF'
+#!/bin/sh
+set -e
+
+if [ "$1" = "purge" ] || [ "$1" = "remove" ]; then
+    rm -f /etc/apt/sources.list.d/tdediskmark.list
+fi
+
+# Recharger la base de services et menus Trinity
+if [ -x /opt/trinity/bin/tdebuildsycoca ]; then
+    /opt/trinity/bin/tdebuildsycoca >/dev/null 2>&1 || true
+fi
+
+# Mettre à jour le cache d'icônes
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -f -t /usr/share/icons/hicolor >/dev/null 2>&1 || true
+fi
+
+# Mettre à jour la base de données desktop
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q /usr/share/applications >/dev/null 2>&1 || true
+fi
+
+exit 0
+EOF
+chmod 755 "$STAGING/DEBIAN/postrm"
+
 # ---- Build .deb ----
 dpkg-deb --build --root-owner-group "$STAGING" "build/$DEB_NAME"
+cp -a "build/$DEB_NAME" "$SCRIPT_DIR/$DEB_NAME"
 
 rm -rf "$STAGING"
 
 echo ""
-echo "=== Package created: build/$DEB_NAME ==="
+echo "=== Package created: build/$DEB_NAME and $DEB_NAME ==="
 echo ""
-echo "Install with:  sudo dpkg -i build/$DEB_NAME"
+echo "Install with:  sudo dpkg -i $DEB_NAME"
 echo "Remove  with:  sudo dpkg -r $PKG_NAME"
+
